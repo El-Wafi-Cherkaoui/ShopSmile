@@ -5,7 +5,7 @@ import { AppContext } from './App'
 
 
 export default function Products() {
-  const [products, loading] = useContext(AppContext)
+  const {products, loading} = useContext(AppContext)
   
   if(loading){
     return 'loading'
@@ -13,9 +13,9 @@ export default function Products() {
   return(
     <div className='products'>
       {products.map((product)=>{
-          return(
-            <Product product={product} key={product.id}/>
-          )
+        return(
+          <Product product={product} key={product.id}/>
+        )
       })}
     </div>
   )

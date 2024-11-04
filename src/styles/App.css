@@ -41,11 +41,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: fit-content;
+    width: 25ch;
     height: fit-content;
     background-color: rebeccapurple;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     gap: .2vw;
     padding: 1vh 2vw;
@@ -56,6 +56,13 @@
     border-radius: 2vw;
     font-weight: bold;
 }
+.validate_quantity{
+    background-color: aliceblue;
+    color: rebeccapurple;
+    padding: .5vh 1vw;
+    border: none;
+    margin-left: auto;
+}
 .quantity_inp{
     height: fit-content;
     width: 5ch;
@@ -63,6 +70,7 @@
     border: .1vw solid rebeccapurple;
     padding: 1vh .1vw;
     color: rebeccapurple;
+    margin-left: auto;
 }
 .increase_btn, .decrease_btn{
     color: aliceblue;

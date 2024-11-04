@@ -13,6 +13,7 @@ export const AppContext = React.createContext()
 
 export default function App() {
   const [products, setProducts] = useState([])
+  const [myCart, setMyCart] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(()=>{
@@ -36,12 +37,17 @@ export default function App() {
     get_prods()
     console.log('fetching data');
   }, [])
-  
+  const contextValue = {
+    products, 
+    loading,
+    myCart, 
+    setMyCart
+  }
   return(
     <>
       <NavBar />
       <div className='content'>
-        <AppContext.Provider value={[products, loading]}>
+        <AppContext.Provider value={contextValue}>
         <Outlet />
         </AppContext.Provider>
       </div>
