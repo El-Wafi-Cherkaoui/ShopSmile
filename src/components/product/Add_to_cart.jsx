@@ -1,10 +1,13 @@
 import QuantityController from "./QuantityController"
-
-export default function Add_to_cart({product, set_QCV}){
+import { ProductContext } from "./Product"
+import { useContext } from "react"
+export default function Add_to_cart(){
+    const {setQCV} = useContext(ProductContext)
+    
     return(
         <button 
             className='add_to_cart'
-            onClick={()=>{set_QCV(true)}}>
+            onClick={()=>{setQCV(true)}}>
             Add to cart
         </button>
     )

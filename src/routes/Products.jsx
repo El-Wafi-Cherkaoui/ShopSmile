@@ -15,7 +15,6 @@ function add_quantities(products){
 }
 export default function Products() {
   const [products, setProducts] = useState(add_quantities(useLoaderData()))
-  console.log(products);
   
   
   return(
