@@ -1,0 +1,21 @@
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    justify-content: center;
+    padding: 2vw;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vh;
+    width: 25%;
+    min-height: fit-content;
+    padding: 1vw;
+    overflow: scroll;
+}
+.product img{
+    width: 50%;
+}
