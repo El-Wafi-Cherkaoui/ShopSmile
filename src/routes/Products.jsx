@@ -2,21 +2,27 @@ import { useEffect, useState } from 'react'
 import '../styles/App.css'
 import { Link, Outlet, useLoaderData } from 'react-router-dom'
 import { NavBar } from '../components/NavBar'
+import Stock from '../components/product/Stock'
+import Add_to_cart from '../components/product/Add_to_cart'
+import QuantityController from '../components/product/QuantityController'
+import Product from '../components/product/Product'
 
+function add_quantities(products){
+  products.map((product)=>{
+    product.quantity = Math.floor(Math.random()*40)
+  })
+  return products
+}
 export default function Products() {
-  const products = useLoaderData()
+  const [products, setProducts] = useState(add_quantities(useLoaderData()))
+  console.log(products);
+  
   
   return(
     <div className='products'>
       {products.map((product)=>{
           return(
-            <div className='product' key={product.id}>
-              <h3>{
-                product.title.length >= 25 ? product.title.slice(0, 25) + '...' : product.title
-                }</h3>
-              <img src={product.image} alt="" />
-              <button>Add to cart</button>
-            </div>
+            <Product product={product} key={product.id}/>
           )
       })}
     </div>

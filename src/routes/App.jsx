@@ -10,6 +10,7 @@ export async function loader() {
 }
 export default function App() {
   const products = useLoaderData()
+  
   return(
     <>
       <NavBar />
@@ -18,6 +19,7 @@ export default function App() {
       </div>
     </>
   )
+  
   
 
 }

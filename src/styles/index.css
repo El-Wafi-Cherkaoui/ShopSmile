@@ -38,6 +38,8 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+
 .error_box{
     border: .1vw solid black;
     width: fit-content;
