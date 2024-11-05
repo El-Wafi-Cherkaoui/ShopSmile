@@ -45,12 +45,12 @@ export default function App() {
   }
   return(
     <>
-      <NavBar />
-      <div className='content'>
-        <AppContext.Provider value={contextValue}>
-        <Outlet />
-        </AppContext.Provider>
-      </div>
+      <AppContext.Provider value={contextValue}>
+        <NavBar />
+        <div className='content'>
+          <Outlet />
+        </div>
+      </AppContext.Provider>
     </>
   )
   

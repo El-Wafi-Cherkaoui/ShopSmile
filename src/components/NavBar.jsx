@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../routes/App";
 
 export function NavBar(){
+    const {myCart, setMyCart} = useContext(AppContext)
     return(
         <div className='navBar'>
             <div className='logo_title'>
@@ -10,7 +13,7 @@ export function NavBar(){
                 <input type="search" id="searchInput" placeholder="search"/>
             <ul className='navLinks'>
                 <Link to={'/'} >Home</Link>
-                <Link to={'products'} >products</Link>
+                <Link to={'cart'} >Cart({myCart.length})</Link>
                 <Link to={'about'} >about</Link>
             </ul>
         </div>

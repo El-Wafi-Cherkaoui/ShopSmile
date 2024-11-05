@@ -7,13 +7,10 @@ import QuantityController from './QuantityController'
 
 export const ProductContext = React.createContext()
 
-export default function Product({product}) {  
-  if(product.quantity == 0) return 
-  const [q_controller_visible, setQCV] = useState(false)
-  const [add_to_cart_btn, setATC] = useState(true)
-  return(
+export default function Order({product, quantity}) {  
 
-    <div className='product' key={product.id}>
+  return(
+    <div className='order' key={product.id}>
       <h3>
         {
           product.title.length >= 25 ? product.title.slice(0, 25) + '...' : product.title
@@ -21,11 +18,7 @@ export default function Product({product}) {
       </h3>
       <img src={product.image} alt="" />
       <div className='p_footer'>
-        <ProductContext.Provider value={{product, q_controller_visible, setQCV, add_to_cart_btn, setATC}} >
-          <Stock />
-          <QuantityController />
-          <Add_to_cart/>
-        </ProductContext.Provider>
+        <span>Quantity {quantity}</span>
       </div>
 
     </div>

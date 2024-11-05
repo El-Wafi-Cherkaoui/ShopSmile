@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { ProductContext } from "./Product"
 import { AppContext } from "../../routes/App"
 export default function QuantityController(){
-    const {product, q_controller_visible, setQCV} = useContext(ProductContext)
+    const {product, q_controller_visible, setQCV, add_to_cart_btn, setATC} = useContext(ProductContext)
     const {myCart, setMyCart} = useContext(AppContext)
     const [quantity, setQuantity] = useState(1)
 
@@ -18,24 +18,39 @@ export default function QuantityController(){
 
     function add_to_cart(){
         if(!quantity) return
-        let found = myCart.find((order)=>order.product == product)
-        
-        if (found && found.quantity+quantity <= product.quantity){
-            found.quantity += quantity
-        }
-        else if (found && found.quantity+quantity > product.quantity){
-            alert('out of stock')
-        }
-        else{            
+        let found = myCart.find((order)=>order.ordered_product == product)
+        if(!found){
             setMyCart((oldCart=>[
                 ...oldCart,
                 {
-                    product:product,
-                    quantity:quantity
+                    ordered_product:product,
+                    ordered_quantity:quantity
                 }
             ]))
+            setQCV(false)
+            if(product.quantity - quantity == 0) {
+                setATC(false)
+            }
+            setQuantity(1)
+
+            return
+        }
+
+        let rest = product.quantity - (found.ordered_quantity + quantity)
+        if(rest > 0){
+            found.ordered_quantity += quantity
+        }
+        else if (rest == 0){
+            found.ordered_quantity += quantity
+            setATC(false)
+        }
+        else{
+            alert('out of stock')
         }
         
+        
+        setQCV(false)
+        setQuantity(1)
         
         
     }

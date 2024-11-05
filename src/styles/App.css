@@ -85,3 +85,25 @@
     color: aliceblue;
     font-weight: bold;
 }
+.orders_list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vw;
+    gap: 1vw;
+}
+.order{
+    width: 25%;
+    height: 50vh;
+    border: 1px solid;
+    padding: 1vw;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.order img{
+    height: 60%;
+    border-radius: 1vw;
+}
