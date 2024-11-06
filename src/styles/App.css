@@ -16,6 +16,8 @@
     padding: 1vw;
     overflow: scroll;
     position: relative;
+    border-radius: .2vw;
+    background-color: aliceblue;
 }
 .product img{
     width: 50%;
@@ -29,7 +31,7 @@
     border-radius: 2vw;
 }
 .p_stock{
-    background-color: rebeccapurple;
+    background-color: #AB886D;
     text-align: center;
     color: aliceblue;
     font-weight: bold;
@@ -43,47 +45,81 @@
     left: 50%;
     width: 25ch;
     height: fit-content;
-    background-color: rebeccapurple;
+    background-color: #AB886D;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: .2vw;
     padding: 1vh 2vw;
+    box-shadow: .0vw .2vw .3vw #493628;
 }
 .quantity_controller > *{
     padding: .5vh .4vw;
-    border: 1px solid;
+    border: 1px solid #E4E0E1 ;
     border-radius: 2vw;
+    font-weight: bold;
     font-weight: bold;
 }
 .validate_quantity{
     background-color: aliceblue;
-    color: rebeccapurple;
+    color: #493628;
     padding: .5vh 1vw;
     border: none;
     margin-left: auto;
+    box-shadow: .1vw .1vw .1vw #493628;
+    cursor: pointer;
+}
+.validate_quantity:hover{
+    background-color: #493628;
+    color: #E4E0E1;
+    border-color: #493628;
+    box-shadow: 0vw .1vw .1vw #E4E0E1;
 }
 .quantity_inp{
     height: fit-content;
     width: 5ch;
     text-align: center;
-    border: .1vw solid rebeccapurple;
-    padding: 1vh .1vw;
-    color: rebeccapurple;
+    padding: .8vh .1vw;
+    color: #CB6040;
     margin-left: auto;
+    border-radius: .2vw;
+    border: none;
 }
 .increase_btn, .decrease_btn{
     color: aliceblue;
-    padding: .5vh .4vw;
+    padding: 0vh .5vw;
+    cursor: pointer;
+    text-align: center;
+    border-radius: .8vw;
+    font-size: .9rem;
+
+}
+.increase_btn:hover, .decrease_btn:hover{
+    color: #E4E0E1;
+    background-color: #493628;
+    border-color: #493628;
+}
+.increase_btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.decrease_btn{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 .add_to_cart{
-    background-color: rebeccapurple;
+    background-color: #AB886D;
     border: none;
     margin-left: auto;
     padding: 2vh 1vw;
     max-width: 20ch;
     color: aliceblue;
     font-weight: bold;
+    cursor: pointer;
+
+}
+.add_to_cart:hover, .p_stock:hover{
+    background-color: #493628;
 }
 .my_cart{
     display: flex;
@@ -99,17 +135,17 @@
     justify-content: center;
     gap: 1vw;
     overflow: scroll;
-    border: .3vw solid;
+    border: .3vw solid #493628;
     border-top-left-radius: 1vw;
     border-bottom-left-radius: 1vw;
     padding: .5vw;
 }
 .side_cart_details{
     flex: 2;
-    background-color: black;
+    background-color: #493628;
     border-top-right-radius: 1vw;
     border-bottom-right-radius: 1vw;
-    color: aliceblue;
+    color: #E4E0E1;
     padding: 1vw;
     display: flex;
     flex-direction: column;
@@ -119,14 +155,66 @@
 .order{
     width: 25%;
     height: 50vh;
-    border: 1px solid;
-    padding: 1vw;
+    border-radius: .2vw;
+    padding: 4vh 1vw;
     text-align: center;
     overflow: hidden;
     display: flex;
+    gap: 3vh;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    position: relative;
+    background-color: aliceblue;
+}
+.o_footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2vh;
+    color: #257180;
+    font-weight: bold;
+}
+.o_controller{
+    display: flex;
+    justify-content: space-evenly;
+    padding: .4vw;
+}
+.inc_btn, .dec_btn {
+    font-size: 1rem;
+    font-weight: bold;
+    width: 33%;
+    background-color: #493628;
+    box-shadow: .1vw .1vw .1vw #AB886D;
+    color: #E4E0E1;
+    border: none;
+    padding: .5vw;
+    border-radius: 2vw;
+    cursor: pointer;
+}
+.inc_btn:hover, .dec_btn:hover {
+    background-color: #E4E0E1;
+    color: #493628;
+    box-shadow: .1vw .2vw .2vw #493628;
+}
+.del_btn{
+    width: 10%;
+    position: absolute;
+    top: .5vw;
+    right: .5vw;
+    background-color: aliceblue;
+    color: #FF6600;
+    font-weight: bolder;
+    padding: .2vw;
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+    border: .1vw solid #CB6040;
+    box-shadow: .1vw .1vw .1vw #CB6040;
+}
+.del_btn:hover{
+    background-color: #FF6600;
+    color: #E4E0E1;
 }
 .order img{
     height: 60%;
@@ -137,4 +225,11 @@
     flex-direction: column;
     border-top: .3vh dashed aliceblue;
     padding: 2vh 0vw;
+}
+.total_cost{
+    background-color: #E4E0E1;
+    color: #493628;
+    padding: 1vh 1vw;
+    text-align: center;
+    border-radius: 2vw;
 }

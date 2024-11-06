@@ -1,9 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../../styles/App.css'
-import { Link, Outlet, useLoaderData } from 'react-router-dom'
-import Stock from './Stock'
-import Add_to_cart from './Add_to_cart'
-import QuantityController from './QuantityController'
 import { AppContext } from '../../routes/App'
 
 
@@ -40,11 +36,13 @@ export default function Order({product, quantity}) {
         }
       </h3>
       <img src={product.image} alt="" />
-      <div className='p_footer'>
-        <span>Quantity {quantity}</span>
-        <button onClick={()=>{modify_order_q(1)}}>+</button>
-        <button onClick={()=>{modify_order_q(-1)}}>-</button>
-        <button onClick={remove_order}>x</button>
+      <div className='o_footer'>
+        <span>Quantity : {quantity}</span>
+        <div className='o_controller'>
+          <button className='inc_btn' onClick={()=>{modify_order_q(1)}}>+</button>
+          <button className='dec_btn' onClick={()=>{modify_order_q(-1)}}>-</button>
+          <button className='del_btn' onClick={remove_order}>x</button>
+        </div>
       </div>
 
     </div>

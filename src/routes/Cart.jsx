@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
 import '../styles/App.css'
-import Product from '../components/product/Product'
 import { AppContext } from './App'
 import Order from '../components/product/Order'
 
@@ -29,7 +28,7 @@ export default function Cart() {
         })}
       </div>
       <div className='side_cart_details'>
-        <h3>
+        <h3 className='total_cost'>
             Total cost : {cartCost} $
         </h3>
         {
