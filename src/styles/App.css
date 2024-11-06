@@ -85,11 +85,36 @@
     color: aliceblue;
     font-weight: bold;
 }
+.my_cart{
+    display: flex;
+    justify-content: center;
+    padding: 1vw;
+    height: 90vh;
+    overflow: hidden;
+}
 .orders_list{
+    flex: 5;
     display: flex;
     flex-wrap: wrap;
-    padding: 2vw;
+    justify-content: center;
     gap: 1vw;
+    overflow: scroll;
+    border: .3vw solid;
+    border-top-left-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+    padding: .5vw;
+}
+.side_cart_details{
+    flex: 2;
+    background-color: black;
+    border-top-right-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    color: aliceblue;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    overflow: scroll;
 }
 .order{
     width: 25%;
@@ -106,4 +131,10 @@
 .order img{
     height: 60%;
     border-radius: 1vw;
+}
+.order_details{
+    display: flex;
+    flex-direction: column;
+    border-top: .3vh dashed aliceblue;
+    padding: 2vh 0vw;
 }
