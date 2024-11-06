@@ -24,6 +24,13 @@ export default function Order({product, quantity}) {
     })    
     setMyCart(modified_cart)
   }
+  function remove_order(){
+    console.log('a');
+    
+    setMyCart(
+      old_cart=> old_cart.filter((order)=>order.ordered_product.id != product.id)
+    )
+  }
 
   return(
     <div className='order' key={product.id}>
@@ -37,6 +44,7 @@ export default function Order({product, quantity}) {
         <span>Quantity {quantity}</span>
         <button onClick={()=>{modify_order_q(1)}}>+</button>
         <button onClick={()=>{modify_order_q(-1)}}>-</button>
+        <button onClick={remove_order}>x</button>
       </div>
 
     </div>
