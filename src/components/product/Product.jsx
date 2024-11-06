@@ -5,6 +5,7 @@ import Stock from './Stock'
 import Add_to_cart from './Add_to_cart'
 import QuantityController from './QuantityController'
 import { AppContext } from '../../routes/App'
+import PropTypes from 'prop-types'
 
 export const ProductContext = React.createContext()
 
@@ -41,7 +42,8 @@ export default function Product({product}) {
     </div>
 
   )
-  
-
+}
+Product.PropTypes = {
+  product: PropTypes.object
 }
 

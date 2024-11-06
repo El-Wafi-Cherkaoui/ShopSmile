@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../../styles/App.css'
 import { AppContext } from '../../routes/App'
-
+import PropTypes from 'prop-types'
 
 export default function Order({product, quantity}) {  
   const {myCart, setMyCart} = useContext(AppContext)
@@ -48,7 +48,9 @@ export default function Order({product, quantity}) {
     </div>
 
   )
-  
-
+}
+Order.PropTypes = {
+  product: PropTypes.object.isRequired,
+  quantity: PropTypes.number.isRequired
 }
 

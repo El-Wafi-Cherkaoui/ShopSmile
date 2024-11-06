@@ -203,17 +203,17 @@
     top: .5vw;
     right: .5vw;
     background-color: aliceblue;
-    color: #FF6600;
+    color: red;
     font-weight: bolder;
     padding: .2vw;
     border: none;
     border-radius: 1vw;
     cursor: pointer;
-    border: .1vw solid #CB6040;
-    box-shadow: .1vw .1vw .1vw #CB6040;
+    border: .1vw solid red;
+    box-shadow: .1vw .1vw .1vw red;
 }
 .del_btn:hover{
-    background-color: #FF6600;
+    background-color: red;
     color: #E4E0E1;
 }
 .order img{
