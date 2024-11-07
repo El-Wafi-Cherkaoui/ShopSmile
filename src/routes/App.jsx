@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../styles/App.css'
 import { Link, Outlet } from 'react-router-dom'
 import { NavBar } from '../components/NavBar'
@@ -15,6 +15,7 @@ export default function App() {
   const [products, setProducts] = useState([])
   const [myCart, setMyCart] = useState([])
   const [loading, setLoading] = useState(true)
+  const [search, setSearch] = useState('')
 
   useEffect(()=>{
     async function get_prods() {
@@ -41,7 +42,9 @@ export default function App() {
     products, 
     loading,
     myCart, 
-    setMyCart
+    setMyCart,
+    search,
+    setSearch
   }
   return(
     <>

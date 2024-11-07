@@ -43,7 +43,7 @@ export default function Product({product}) {
 
   )
 }
-Product.PropTypes = {
+Product.propTypes = {
   product: PropTypes.object
 }
 

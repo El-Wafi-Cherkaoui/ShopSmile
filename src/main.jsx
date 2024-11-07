@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Error_page from './components/Error_page.jsx'
 import Products from './routes/Products.jsx'
 import Cart from './routes/Cart.jsx'
+import Loading from './components/Loading.jsx'
 
 
 const my_router = createBrowserRouter([
