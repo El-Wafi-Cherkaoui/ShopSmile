@@ -37,14 +37,28 @@ body{
     outline: .4vw solid #e4e0e196;
 }
 .navLinks{
-    width: 20%;
+    width: fit-content;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .navLinks a{
-    color: aliceblue;
+    color: #E4E0E1;
     text-decoration: none;
     font-weight: bold;
+    padding: .5vh 1vw;
+
+}
+.navLinks a.active{
+    background-color: #E4E0E1;
+    color: #493628;
+    border-radius: 2vw;
+}
+.active #cart_counter{
+    background-color: #493628;
+    color: #E4E0E1;
+    padding: 0vh 1vw;
+    border-radius: 2vw;
 }
 #cart_counter{
     background-color: #E4E0E1;
@@ -65,10 +79,6 @@ body{
     background-color: red;
     padding: .5vh 1vw;
     text-align: center;
-}
-.active-link{
-    background-color: red;
-    color: red;
 }
 
 .loading_box{
