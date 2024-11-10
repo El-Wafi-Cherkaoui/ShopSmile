@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import '../styles/App.css'
 import { Link, Outlet } from 'react-router-dom'
 import { NavBar } from '../components/NavBar'
@@ -38,14 +38,21 @@ export default function App() {
     get_prods()
     console.log('fetching data');
   }, [])
-  const contextValue = {
+  const contextValue = useMemo(()=>{
+    return {
+      products, 
+      loading,
+      myCart, 
+      setMyCart,
+      search,
+      setSearch
+    }
+  }, [
     products, 
     loading,
-    myCart, 
-    setMyCart,
-    search,
-    setSearch
-  }
+    myCart,
+    search
+  ])
   return(
     <>
       <AppContext.Provider value={contextValue}>
