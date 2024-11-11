@@ -74,13 +74,26 @@ body{
     padding: 0vh 0vw 1vh;
 
     box-shadow: .5vw .5vw .1vw;
+    border-radius: 2vw;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 20%;
+    transform: translate(0%, -50%);
 }
 .error_box h1{
-    background-color: red;
+    background-color: #493628;
+    color: #E4E0E1;
     padding: .5vh 1vw;
     text-align: center;
 }
-
+.error_box p{
+    padding: 1vw;
+    text-align: center;
+}
+.error_box a{
+    color: #493628;
+    font-weight: bold;
+}
 .loading_box{
     border: 1px solid;
     width: fit-content;
